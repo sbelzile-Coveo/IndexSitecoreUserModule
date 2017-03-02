@@ -157,6 +157,7 @@ namespace SitecoreUser.EventHandlers
             }
             catch (Exception exception) {
                 // TODO : log exception
+                throw;
             }
         }
     }

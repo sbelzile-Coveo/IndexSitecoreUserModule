@@ -15,6 +15,7 @@ namespace SitecoreUser.Pipelines
             catch (InvalidOperationException exception)
             {
                 // TODO : log exception
+                throw;
             }
             catch (Exception ex)
             {
