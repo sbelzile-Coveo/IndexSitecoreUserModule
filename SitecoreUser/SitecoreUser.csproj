@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B15EDEFA-DBE2-444A-951F-601B8AADA557}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SitecoreUser</RootNamespace>
+    <AssemblyName>SitecoreUser</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>D:\inetpub\wwwroot\sc81hack\Website\bin\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\Synchronize.cs" />
+    <Compile Include="EventHandlers\UserSynchronizerEventHandler.cs" />
+    <Compile Include="IUserProvider.cs" />
+    <Compile Include="IUtilities.cs" />
+    <Compile Include="Pipelines\EditFieldsPipeline\AddBaseFields.cs" />
+    <Compile Include="Pipelines\EditFieldsPipeline\EditFieldsPipelineArgs.cs" />
+    <Compile Include="Pipelines\EditFieldsPipeline\FieldsConstants.cs" />
+    <Compile Include="Pipelines\IPipelineArgs.cs" />
+    <Compile Include="Pipelines\IPipelineRunner.cs" />
+    <Compile Include="Pipelines\IPipelineRunnerHandler.cs" />
+    <Compile Include="Pipelines\IProcessor.cs" />
+    <Compile Include="Pipelines\PipelineRunner.cs" />
+    <Compile Include="Pipelines\PipelineRunnerHandler.cs" />
+    <Compile Include="Settings\IUserSynchronizationSettings.cs" />
+    <Compile Include="Settings\SettingsConstants.cs" />
+    <Compile Include="UserProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\UserSynchronizationSettings.cs" />
+    <Compile Include="UserSynchronizerConstants.cs" />
+    <Compile Include="Utilities.cs" />
+    <Compile Include="Wrappers\IDatabase.cs" />
+    <Compile Include="Wrappers\IDomain.cs" />
+    <Compile Include="Wrappers\IEventManager.cs" />
+    <Compile Include="Wrappers\IFactory.cs" />
+    <Compile Include="Wrappers\IItem.cs" />
+    <Compile Include="Wrappers\ISettings.cs" />
+    <Compile Include="Wrappers\ITemplateItem.cs" />
+    <Compile Include="Wrappers\IUser.cs" />
+    <Compile Include="Wrappers\SitecoreDatabase.cs" />
+    <Compile Include="Wrappers\SitecoreDomain.cs" />
+    <Compile Include="Wrappers\SitecoreEventManager.cs" />
+    <Compile Include="Wrappers\SitecoreFactory.cs" />
+    <Compile Include="Wrappers\SitecoreItem.cs" />
+    <Compile Include="Wrappers\SitecoreSettings.cs" />
+    <Compile Include="Wrappers\SitecoreUser.cs" />
+    <Compile Include="Wrappers\SitecoreTemplateItem.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
