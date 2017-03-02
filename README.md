@@ -1,1 +1,1 @@
-"# IndexSitecoreUserModule" 
+# IndexSitecoreUserModule
